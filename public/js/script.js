@@ -3,7 +3,7 @@
 
 async function getuservalues() {
   try {
-    const data = await fetch(`http://localhost:3000/api/employees`)
+    const data = await fetch(`https://employee-management-system-4va6.onrender.com/api/employees`)
     const objectData = await data.json()
     
     getData(objectData)
@@ -187,7 +187,7 @@ async function userdetails() {
       formData.append(key, value);
     }
 
-    const response = await fetch("http://localhost:3000/api/employees", {
+    const response = await fetch("https://employee-management-system-4va6.onrender.com/api/employees", {
       method: "POST",
       body: formData,
     });
@@ -319,7 +319,7 @@ async function userdetails() {
      var itemperpage = parseInt(dataList.value);
  
      if (searchData) {
-         fetch(`http://localhost:3000/search/${searchData}?page=1&limit=${itemperpage}`)
+         fetch(`https://employee-management-system-4va6.onrender.com/search/${searchData}?page=1&limit=${itemperpage}`)
              .then((response) => {
                  if (!response.ok) {
                      throw new Error("Server error: " + response.statusText);
@@ -356,7 +356,7 @@ async function userdetails() {
     document.getElementById('overlay').classList.add('active');
 
     deleteformdata.addEventListener("click", function () {
-      fetch("http://localhost:3000/api/employees/" + id, {
+      fetch("https://employee-management-system-4va6.onrender.com/api/employees/" + id, {
          method: "DELETE",
          headers: {
            "content-Type": "application/json"
@@ -427,7 +427,7 @@ async function userdetails() {
 
       //fetch data for edit//
 
-      const res = await fetch("http://localhost:3000/api/employees/" + users)
+      const res = await fetch("https://employee-management-system-4va6.onrender.com/api/employees/" + users)
       const data = await res.json()
 
       console.log(data);
@@ -460,7 +460,7 @@ async function userdetails() {
     try {
       let formData = new FormData();
       formData.append("image", image);
-      const res = await fetch("http://localhost:3000/api/employees/"+ users, {
+      const res = await fetch("https://employee-management-system-4va6.onrender.com/api/employees/"+ users, {
         method: "PUT",
         body: formData,
       });
@@ -483,7 +483,7 @@ async function userdetails() {
         addImage(profileimg)
       }
 
-      fetch("http://localhost:3000/api/employees/" + users, {
+      fetch("https://employee-management-system-4va6.onrender.com/api/employees/" + users, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"

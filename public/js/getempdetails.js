@@ -15,7 +15,7 @@ let UserViewQualification = document.getElementById('view-qualification')
 let UserViewAddress = document.getElementById('view-address')
 let UserViewUserName = document.getElementById('view-username')
 
-fetch("http://localhost:3000/api/employees/" +employeeid)
+fetch("https://employee-management-system-4va6.onrender.com/api/employees/" +employeeid)
 .then((employeedata) => {
   return employeedata.json()
 }).then((userdatas) =>{
@@ -89,7 +89,7 @@ function vieweditformclose(){
 
 //ADD DATA TO VIEW EDIT-FORM//
   function viewedit(){
-    fetch("http://localhost:3000/api/employees/" +employeeid)
+    fetch("https://employee-management-system-4va6.onrender.com/api/employees/" +employeeid)
     .then((employeedata) => {
       return employeedata.json()
 
@@ -145,7 +145,7 @@ function vieweditformclose(){
         let formData = new FormData();
         formData.append("image", image);
     
-        const res = await fetch("http://localhost:3000/api/employees/"+ employeeid, {
+        const res = await fetch("https://employee-management-system-4va6.onrender.com/api/employees/"+ employeeid, {
           method: "PUT",
           body: formData,
         });
@@ -165,7 +165,7 @@ function vieweditformclose(){
       if(profileimg){
         addImage(profileimg)
       }
-      await  fetch("http://localhost:3000/api/employees/" +employeeid,{
+      await  fetch("https://employee-management-system-4va6.onrender.com/api/employees/" +employeeid,{
         method:"PUT",
         headers: {
          "Content-Type": "application/json"
@@ -237,7 +237,7 @@ function deleteData(employeeid) {
   document.getElementById('overlay').classList.add('active');
 
   deleteformdata.addEventListener("click", function () {
-    fetch("http://localhost:3000/api/employees/" + employeeid, {
+    fetch("https://employee-management-system-4va6.onrender.com/api/employees/" + employeeid, {
       method: "DELETE",
       headers: {
       "content-Type": "application/json"
