@@ -1,0 +1,28 @@
+    <!-- delete alertbox -->
+    <div id="deleteformbox" class="bg-colour delete-edit-btn col-lg-5 ">
+        <div class="dele-head ">
+            <div class="text">Delete Employee</div>
+            <i onclick="closealert()" class=" close fa-solid fa-xmark"></i>
+        </div>
+        <div class="dele-head-text">Are you sure you want to delete this employee?</div>
+        <div class="dele-bt buttons d-flex justify-content-end">
+            <button onclick="closealert()" id="formcancel" class="btn  btn-light ">Cancel</button>
+            <button id="formdelete" class="btn dele-btns">Delete</button>
+        </div>
+    </div>
+
+  
+
+    <div class="delete-success bg-colour" id="deleteformsuccess">
+        <div class="toast-content">
+            <div>
+                <i class="fa-regular fa-trash-can"></i>
+            </div>
+            <div class="message">
+                <span class="text">Success!</span>
+                <div class="text-main">Employee Deleted Successfully</div>
+            </div>
+            <div><i onclick="closealert()" class=" close fa-solid fa-xmark close-mark"></i></div>
+        
+        </div>
+    </div>

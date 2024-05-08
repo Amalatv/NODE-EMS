@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/otp.css">
+
+    <title> otp Page </title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+    
+
+        <!-- sign in -->
+    
+        <div class="form-container sign-in">
+             <form action="/register/verifyUserEmail" method="post">
+                <h1>Verify Your Identity</h1>
+               
+                <span>A verification code has been sent to</span>
+                <span><%= Email %></span>
+                <div class="otp-input-fields">
+                    <input id="otpInput" name="otpInput" type="text" class="otp_num otp_num_3" />
+                </div>
+                <a href="#">Resent otp?</a>
+                <button type="submit" id="otpverify" name="otpInput">Verify</button>
+            </form> 
+        </div> 
+        <div class="toggle-container">
+            <div class="toggle">
+               
+                 <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Please check your inbox and enter the verification code to verify your
+                        email address.</p>
+                    <p>The code will expire in 10:51.</p>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

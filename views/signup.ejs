@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <title>Login Page</title>
+</head>
+
+<body>
+
+    <!-- Toast notification -->
+    <% if (notification) { %>
+        <div class="notification <% if(notification.includes('Email verified')) { %> verified <% } else { %> error <% } %>"
+            id="notification">
+            <%= notification %>
+        </div>
+        <%} %>
+
+
+            <!-- signup -->
+            <div class="container" id="container">
+                <div class="form-container sign-up">
+                    <form action="/register" method="post">
+                        <h1>Create Account</h1>
+                        <span>Use your email for registration</span>
+                        <input type="text" id="name" placeholder="Username" name="name" autocomplete="on">
+                        <input type="email" id="email" placeholder="Email" name="email" autocomplete="on">
+                        <input type="password" id="password" placeholder="Password" name="password" autocomplete="on">
+                        <button type="submit" id="registeruser">Sign Up</button>
+                    </form>
+                </div>
+
+                <!-- sign in -->
+                <div class="form-container sign-in">
+                    <form action="/register/loginUser" method="post">
+                        <h1>Login</h1>
+                        <span>Use your email password</span>
+                        <input type="email" id="loginemail" placeholder="Email" name="email" autocomplete="on">
+                        <input type="password" id="loginpassword" placeholder="Password" name="password"
+                            autocomplete="on">
+                        <a class="change" href="#">Forget Your Password?</a>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+
+                <!-- Toggle panel -->
+                <div class="toggle-container">
+                    <div class="toggle">
+                        <div class="toggle-panel toggle-left">
+                            <h1>Welcome Back!</h1>
+                            <p>Enter your personal details to use all of site features</p>
+                            <button class="hidden" id="login">Login</button>
+                        </div>
+
+                        <div class="toggle-panel toggle-right">
+                            <h1>Hello, Friend!</h1>
+                            <p>Register with your personal details to use all of site features</p>
+                            <p>Not registered yet?</p>
+                            <button type="submit" class="hidden" id="register">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script src="/js/signup.js"></script>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const notification = document.getElementById('notification');
+                    if (notification) {
+                        setTimeout(() => {
+                            notification.style.display = 'none';
+                        }, 4000);
+                    }
+                });
+            </script>
+
+</body>
+
+</html>
